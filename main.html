@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./main.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+	<div class="main">
+		<div class="button">
+            <div type="button" id="clear">clear</div>
+			<div type="button" id="userAuth">사용자 인증</div>
+			<div type="button" id="userDel">사용자 삭제</div>
+			<div type="button" id="coupUse">쿠폰 사용</div>
+			<div type="button" id="coupModi">쿠폰 수정</div>
+		</div>
+		<div class="info">
+			<div class="alert"><p>지문을 인식해주세요.</p></div>
+            <div class="form">
+                <form>
+                    <div class="formRow"><label>아이디</label><input type="text" name="id" id="id_input" value="" /></div>
+                    <div class="formRow"><label>이름</label><input type="text" name="name" id="name_input" value="" /></div>
+                    <div class="formRow"><label>전화번호</label><input type="text" name="phone" id="phone_input" value="" /></div>
+                    <div class="formRow"><label>쿠폰 개수</label><input type="text" name="coupon" id="coupon_input" value="" /><div class="plus">+</div><div class="minus">-</div></div>
+                    <!--<div class="formRow"><input type="submit" id="add" value="추가" /></div>-->
+                </form>
+            </div>
+            <div class="userInfo"></div>
+		</div>
+        <h2>Total Database</h2>
+		<div class="table">
+			<table class="table_list" cellspacing="0">       
+                <thead>
+                    <tr>
+                        <th width="10%">Id</th>
+                        <th width="40%">Name</th>
+                        <th width="40%">Phone</th>
+                        <th width="10%">Coupon</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="id">1</td>
+                        <td class="name">ABC</td>
+                        <td class="phone">010-1234-5678</td>
+                        <td class="coupon">10</td>
+                    </tr>
+                    <tr>
+                        <td class="id">2</td>
+                        <td class="name">AB</td>
+                        <td class="phone">110-1234-5678</td>
+                        <td class="coupon">9</td>
+                    </tr>
+                    <tr>
+                        <td class="id">3</td>
+                        <td class="name">C</td>
+                        <td class="phone">007-1234-5678</td>
+                        <td class="coupon">8</td>
+                    </tr>
+                </tbody>
+            </table>
+		</div>
+	</div>
+</div>
+<script src="./main.js" type="text/javascript"></script>
+</body>
+</html>
