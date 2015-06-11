@@ -2,7 +2,7 @@ import tornado.ioloop
 import tornado.web
 import torndb as database
 import json
-import fingerprint as f
+#import fingerprint as f
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
@@ -81,12 +81,25 @@ class ModifyStamp(tornado.web.RequestHandler):
         except:
             return 'fail'
 
+class Database(tornado.web.RequestHandler):
+    def get(self):
+        db = database.Connection("localhost", "fingerprint", user="root", password="1")
+        data = db.execute("select * from user")
+        result=list()
+        for row in data:
+            dic = dict()
+            for r in row:
+                dic[r] = row[r]
+            result.append(dic)
+        return json.dumps(result)
+                
 application = tornado.web.Application([
-    (r"/", MainnHandler),
+    (r"/", MainHandler),
     (r"/userRegister", UserRegister),
     (r"/userDelete", UserDelete),
     (r"/useStamp", UseStamp),
     (r"/modifyStamp", ModifyStamp),
+    (r"/database", Database),
 ])
 
 if __name__ == "__main__":

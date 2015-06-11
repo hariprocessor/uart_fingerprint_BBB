@@ -37,6 +37,16 @@ def communication(cmd):
     response = ser.read(8)
     return response
 
+def communication_h(cmd):
+    for s in cmd:
+        ser.write(chr(s))
+    s = ser.read(1)
+    s = ''
+    response = ''
+    while s == '\xf5':
+        response = response+ser.read(1)
+    return response
+
 def print_response(response):
     for s in response:
         print b.b2a_hex(s)+' ',
@@ -99,6 +109,12 @@ def delete_user(user):
     print_response(response)
     if print_q(response, [1, 1, 0, 0, 0, 0, 0, 0, 0]) != 'ACK_SUCCESS':
         return print_q(response, [1, 1, 0, 0, 0, 0, 0, 0, 0])
+
+def version():
+    s = b.a2b_hex('f5260000000000f5')
+    s = chk(s)
+    response = communication_h(s)
+    print_response(response)
 
 def total_num():
     s = b.a2b_hex('f5090000000000f5')
