@@ -85,12 +85,10 @@ def add(user):
         return print_q(response, [1, 1, 0, 0, 1, 0, 0, 0, 1])
     response = communication(s_add2)
     print_response(response)
-    if print_q(response, [1, 1, 0, 0, 0, 0, 0, 0, 1]) != 'ACK_SUCCESS':
-        return print_q(response, [1, 1, 0, 0, 0, 0, 0, 0, 1])
+    if print_q(response, [1, 0, 0, 0, 0, 0, 0, 0, 1]) != 'ACK_SUCCESS':
+        return print_q(response, [1, 0, 0, 0, 0, 0, 0, 0, 1])
     response = communication(s_add3)
     print_response(response)
-    if print_q(response, [1, 1, 0, 0, 0, 0, 0, 1, 1]) != 'ACK_SUCCESS':
-        return print_q(response, [1, 1, 0, 0, 0, 0, 0, 1, 1])
     return 'ACK_SUCCESS'
 
 def compare_n():
@@ -109,6 +107,7 @@ def delete_user(user):
     print_response(response)
     if print_q(response, [1, 1, 0, 0, 0, 0, 0, 0, 0]) != 'ACK_SUCCESS':
         return print_q(response, [1, 1, 0, 0, 0, 0, 0, 0, 0])
+    return 'ACK_SUCCESS'
 
 def version():
     s = b.a2b_hex('f5260000000000f5')
