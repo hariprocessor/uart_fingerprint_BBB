@@ -1,4 +1,4 @@
-var url = "main.php";
+var url = "http://192.168.7.2:8000";
 // 페이지 로드 시에 DB 가져오기
 window.onload = function(){
     fetchDB();
