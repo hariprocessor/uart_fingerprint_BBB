@@ -23,3 +23,7 @@
 ## fingerprint.py
 * 이 파일은 비글본에서 지문인식 센서를 제어하기 위한 파일입니다.
 * Adafruit_UART 를 사용해 개발했으며, 지문 등록, 지문 삭제, 현재 데이터베이스에 있는 지문의 갯수 등 기본적인 기능을 수행할 수 있습니다.
+
+### Demo
+* https://www.youtube.com/watch?v=sQ4XIpN_qYE
+
