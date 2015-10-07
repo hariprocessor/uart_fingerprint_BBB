@@ -2,27 +2,22 @@
 
 ## Usage
 ### Beaglebone black
-* 비글본에 fingerprint sensor 를 연결합니다.
-* 비글본 내부에서 index.py 파일을 실행시킵니다.
-* 실행시키기 전에 필요한 패키지는 tornado 입니다.
+* Connect fingerprint sensor to beaglebone.
+* In beaglebone system, execute index.py.
+* Required package before executing is tornado.
 
 ### Ubuntu
-* 웹서버 역할을 하는 우분투 서버입니다.
-* host/index.py 를 실행시킵니다.
-* 실행시키기 전에 필요한 패키지는 tornado, torndb, python-mysql 입니다.
+* Ubuntu server(web server)
+* In host system, execute index.py.
+* Required package before executing is tornado, torndb, python-mysql.
 
 ### index.html
-* 클라이언트 파일입니다.
-* 편한 브라우저로 실행시키면 됩니다. (모든 브라우저 최신 버전 이하에서 동작 안함)
-
-### 지문인식 방법
-* 사용자인식 버튼을 클릭한 후 지문을 댑니다. 이 때, 지문이 등록되어 있지 않다면 지문을 등록한 후 로그인하며, 지문이 등록되어 있다면 그 사용자로 로그인합니다.
-* 쿠폰 수정과 사용 버튼은 쿠폰갯수 텍스트박스를 수정한 후 버튼을 눌러줍니다. 쿠폰 갯수 텍스트박스에 1을 입력하고 쿠폰 수정 버튼을 누르면 현재 로그인되어 있는 사용자의 쿠폰갯수가 하나 줄어듭니다. 동일하게 30을 입력하고 쿠폰 사용 버튼을 누르면 쿠폰 갯수가 30개가 됩니다.
-* 사용자 삭제 버튼을 누른 후 지문을 대면 그 지문에 해당하는 사용자를 삭제할 수 있습니다.
+* It is a client file.
+* Execute with any browser.
 
 ## fingerprint.py
-* 이 파일은 비글본에서 지문인식 센서를 제어하기 위한 파일입니다.
-* Adafruit_UART 를 사용해 개발했으며, 지문 등록, 지문 삭제, 현재 데이터베이스에 있는 지문의 갯수 등 기본적인 기능을 수행할 수 있습니다.
+* This file control the fingerprint module.
+* It is developed by Adafuit_UART and can conduct basic functions, registering fingerprint, deleting fingerprint and retrieving the number of registered fingerprints.
 
 ### Demo
 * https://www.youtube.com/watch?v=sQ4XIpN_qYE
